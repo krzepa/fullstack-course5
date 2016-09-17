@@ -20,14 +20,17 @@
             $scope.message = 'Too much!';
             $scope.messageStyle = 'message-somedata';
       }
-    }
+    };
+
     function countDishes(a) {
-      return a.reduce(function(value, element, index){
+      return a.reduce(function(value, element){
         if(element.trim().length) return value + 1;
         else return value;
       }, 0);
     }
   }
+
   LunchCheckerController.$inject = ['$scope','$injector'];
   app.controller('LunchCheckerController', LunchCheckerController);
+
 })();
