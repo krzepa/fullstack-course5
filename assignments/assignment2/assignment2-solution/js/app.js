@@ -5,7 +5,7 @@
 
     ToBuyShoppingController.$inject = ['ShoppingListCheckOffService'];
     function ToBuyShoppingController(ShoppingListCheckOffService) {
-        this.itemsList = ShoppingListCheckOffService.toBuyItemsList;
+        this.itemsList = ShoppingListCheckOffService.getToBuyItemsList();
         this.checkOffItem = function (itemIndex) {
             ShoppingListCheckOffService.checkOffItem(itemIndex);
         };
@@ -13,23 +13,30 @@
 
     AlreadyBoughtShoppingController.$inject = ['ShoppingListCheckOffService'];
     function AlreadyBoughtShoppingController(ShoppingListCheckOffService) {
-        this.itemsList = ShoppingListCheckOffService.boughtItemsList;
+        this.itemsList = ShoppingListCheckOffService.getBoughtItemsList();
     }
 
     function ShoppingListCheckOffService() {
-        this.toBuyItemsList = [
-            { name: 'cookies', quantity: 10 },
-            { name: 'milk', quantity: 1 },
-            { name: 'butter', quantity: 1 },
-            { name: 'bread', quantity: 2 },
-            { name: 'sugar', quantity: 2 }
-        ];
-
-        this.boughtItemsList = [];
+        var toBuyItemsList = [
+                { name: 'cookies', quantity: 10 },
+                { name: 'milk', quantity: 1 },
+                { name: 'butter', quantity: 1 },
+                { name: 'bread', quantity: 2 },
+                { name: 'sugar', quantity: 2 }
+            ],
+            boughtItemsList = [];
 
         this.checkOffItem = function (itemIndex) {
-            this.boughtItemsList.push(this.toBuyItemsList.splice(itemIndex, 1)[0]);
-        }
+            boughtItemsList.push(toBuyItemsList.splice(itemIndex, 1)[0]);
+        };
+
+        this.getBoughtItemsList = function() {
+            return boughtItemsList;
+        };
+
+        this.getToBuyItemsList = function() {
+            return toBuyItemsList;
+        };
     }
 
     app.controller('ToBuyShoppingController', ToBuyShoppingController);
