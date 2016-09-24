@@ -18,11 +18,11 @@
 
     function ShoppingListCheckOffService() {
         this.toBuyItemsList = [
-            'Buy 10 cookies',
-            'Buy milk',
-            'Buy butter',
-            'Buy bread',
-            'Buy 12 eggs'
+            { name: 'cookies', quantity: 10 },
+            { name: 'milk', quantity: 1 },
+            { name: 'butter', quantity: 1 },
+            { name: 'bread', quantity: 2 },
+            { name: 'sugar', quantity: 2 }
         ];
 
         this.boughtItemsList = [];
