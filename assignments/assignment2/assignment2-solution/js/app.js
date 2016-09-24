@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var app = angular.module('ShoppingListApp', []);
+    var app = angular.module('ShoppingListCheckOff', []);
 
     ToBuyShoppingController.$inject = ['ShoppingListCheckOffService'];
     function ToBuyShoppingController(ShoppingListCheckOffService) {
