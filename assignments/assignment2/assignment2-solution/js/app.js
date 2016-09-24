@@ -14,6 +14,9 @@
     AlreadyBoughtShoppingController.$inject = ['ShoppingListCheckOffService'];
     function AlreadyBoughtShoppingController(ShoppingListCheckOffService) {
         this.itemsList = ShoppingListCheckOffService.getBoughtItemsList();
+        this.cancelCheckOff = function (itemIndex) {
+            ShoppingListCheckOffService.cancelCheckOff(itemIndex);
+        };
     }
 
     function ShoppingListCheckOffService() {
@@ -28,6 +31,10 @@
 
         this.checkOffItem = function (itemIndex) {
             boughtItemsList.push(toBuyItemsList.splice(itemIndex, 1)[0]);
+        };
+
+        this.cancelCheckOff = function (itemIndex) {
+            toBuyItemsList.push(boughtItemsList.splice(itemIndex, 1)[0]);
         };
 
         this.getBoughtItemsList = function() {
