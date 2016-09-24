@@ -12,6 +12,7 @@ function ParentController1($scope) {
   $scope.parentValue = 1;
   $scope.pc = this;
   $scope.pc.parentValue = 1;
+
 }
 
 
@@ -43,7 +44,8 @@ ChildController2.$inject = ['$scope'];
 function ChildController2($scope) {
   var child = this;
   child.value = 5;
-  console.log("ChildController2 $scope: ", $scope);
+  $scope.someName = 'XXXXXXXXXX'
+  console.log("ChildController2 $scope: ", $scope, this);
 }
 
 })();

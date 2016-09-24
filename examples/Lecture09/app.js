@@ -15,6 +15,7 @@ function DIController ($scope,
   };
 
   console.log($injector.annotate(DIController));
+  console.log($injector.annotate(AnnonateMe));
 }
 
 function AnnonateMe(name, job, blah) {

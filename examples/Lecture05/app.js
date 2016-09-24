@@ -8,6 +8,8 @@ angular.module('myFirstApp', [])
 	$scope.sayHello = function () {
 		return "Hello Coursera!";
 	};
+
+	console.log($scope, this);
 });
 
 })();

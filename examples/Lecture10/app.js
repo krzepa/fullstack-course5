@@ -5,11 +5,11 @@ angular.module('DIApp', [])
 .controller('DIController', DIController);
 
 DIController.$inject = ['$scope', '$filter'];
-function DIController($scope, $filter) {
+function DIController($scope) {
   $scope.name = "Yaakov";
 
   $scope.upper = function () {
-    var upCase = $filter('uppercase');
+
     $scope.name = upCase($scope.name);
   };
 }

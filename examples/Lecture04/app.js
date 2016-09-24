@@ -1,10 +1,11 @@
 (function () {
 'use strict';
 
-angular.module('myFirstApp', [])
+var app = angular.module('main.myFirstApp', []);
+console.log('app',app);
 
-.controller('MyFirstController', function () {
-
-});
+    app.controller('MyFirstController', function ($rootScope, $scope) {
+        console.log('scopes', $rootScope, $scope);
+    });
 
 })();
